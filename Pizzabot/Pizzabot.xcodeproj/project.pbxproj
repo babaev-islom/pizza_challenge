@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F7A52CE274238C10002B78F /* PizzaBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52CD274238C10002B78F /* PizzaBot.swift */; };
+		7F7A52D0274238D90002B78F /* PizzaMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52CF274238D90002B78F /* PizzaMap.swift */; };
+		7F7A52D2274238EB0002B78F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52D1274238EB0002B78F /* Direction.swift */; };
+		7F7A52DF27424F8D0002B78F /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52DE27424F8D0002B78F /* EnvironmentTests.swift */; };
+		7F97FA232743BF390032FB7A /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA222743BF390032FB7A /* Bot.swift */; };
+		7F97FA252743BF500032FB7A /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA242743BF500032FB7A /* Map.swift */; };
+		7F97FA282743BF930032FB7A /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA272743BF930032FB7A /* InputParser.swift */; };
+		7F97FA2A2743C0190032FB7A /* OutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA292743C0190032FB7A /* OutputParser.swift */; };
+		7F97FA2E2743C0710032FB7A /* PizzaEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA2D2743C0710032FB7A /* PizzaEnvironment.swift */; };
+		7F97FA302743C1770032FB7A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA2F2743C1770032FB7A /* Environment.swift */; };
+		7FE3BBFC273E7B8F00F88661 /* Pizzabot.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FE3BBFB273E7B8F00F88661 /* Pizzabot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FE3BC0A273E7D0000F88661 /* PizzaBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3BC09273E7D0000F88661 /* PizzaBotTests.swift */; };
+		7FE3BC0B273E7D0000F88661 /* Pizzabot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3BBF8273E7B8F00F88661 /* Pizzabot.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FE3BC0C273E7D0000F88661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FE3BBEF273E7B8F00F88661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FE3BBF7273E7B8F00F88661;
+			remoteInfo = Pizzabot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F7A52CD274238C10002B78F /* PizzaBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaBot.swift; sourceTree = "<group>"; };
+		7F7A52CF274238D90002B78F /* PizzaMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaMap.swift; sourceTree = "<group>"; };
+		7F7A52D1274238EB0002B78F /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		7F7A52DE27424F8D0002B78F /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
+		7F97FA222743BF390032FB7A /* Bot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bot.swift; sourceTree = "<group>"; };
+		7F97FA242743BF500032FB7A /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		7F97FA272743BF930032FB7A /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
+		7F97FA292743C0190032FB7A /* OutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputParser.swift; sourceTree = "<group>"; };
+		7F97FA2D2743C0710032FB7A /* PizzaEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaEnvironment.swift; sourceTree = "<group>"; };
+		7F97FA2F2743C1770032FB7A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		7FE3BBF8273E7B8F00F88661 /* Pizzabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pizzabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE3BBFB273E7B8F00F88661 /* Pizzabot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pizzabot.h; sourceTree = "<group>"; };
+		7FE3BC07273E7D0000F88661 /* PizzabotChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzabotChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE3BC09273E7D0000F88661 /* PizzaBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaBotTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FE3BBF5273E7B8F00F88661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE3BC04273E7D0000F88661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE3BC0B273E7D0000F88661 /* Pizzabot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F7A52CC274238550002B78F /* Bot */ = {
+			isa = PBXGroup;
+			children = (
+				7FE3BC09273E7D0000F88661 /* PizzaBotTests.swift */,
+			);
+			path = Bot;
+			sourceTree = "<group>";
+		};
+		7F7A52DD27424F7B0002B78F /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				7F7A52DE27424F8D0002B78F /* EnvironmentTests.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		7F97FA212743BF2D0032FB7A /* Bot Feature */ = {
+			isa = PBXGroup;
+			children = (
+				7F97FA222743BF390032FB7A /* Bot.swift */,
+				7F97FA242743BF500032FB7A /* Map.swift */,
+				7F7A52D1274238EB0002B78F /* Direction.swift */,
+				7F97FA2F2743C1770032FB7A /* Environment.swift */,
+			);
+			path = "Bot Feature";
+			sourceTree = "<group>";
+		};
+		7F97FA262743BF880032FB7A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7F97FA272743BF930032FB7A /* InputParser.swift */,
+				7F97FA292743C0190032FB7A /* OutputParser.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7FE3BBEE273E7B8F00F88661 = {
+			isa = PBXGroup;
+			children = (
+				7FE3BBFA273E7B8F00F88661 /* Pizzabot */,
+				7FE3BC08273E7D0000F88661 /* PizzabotChallengeTests */,
+				7FE3BBF9273E7B8F00F88661 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FE3BBF9273E7B8F00F88661 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FE3BBF8273E7B8F00F88661 /* Pizzabot.framework */,
+				7FE3BC07273E7D0000F88661 /* PizzabotChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FE3BBFA273E7B8F00F88661 /* Pizzabot */ = {
+			isa = PBXGroup;
+			children = (
+				7FE3BBFB273E7B8F00F88661 /* Pizzabot.h */,
+				7F97FA212743BF2D0032FB7A /* Bot Feature */,
+				7FE3BC02273E7C4600F88661 /* Bot */,
+			);
+			path = Pizzabot;
+			sourceTree = "<group>";
+		};
+		7FE3BC02273E7C4600F88661 /* Bot */ = {
+			isa = PBXGroup;
+			children = (
+				7F7A52CD274238C10002B78F /* PizzaBot.swift */,
+				7F7A52CF274238D90002B78F /* PizzaMap.swift */,
+				7F97FA2D2743C0710032FB7A /* PizzaEnvironment.swift */,
+				7F97FA262743BF880032FB7A /* Helpers */,
+			);
+			path = Bot;
+			sourceTree = "<group>";
+		};
+		7FE3BC08273E7D0000F88661 /* PizzabotChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F7A52DD27424F7B0002B78F /* Environment */,
+				7F7A52CC274238550002B78F /* Bot */,
+			);
+			path = PizzabotChallengeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7FE3BBF3273E7B8F00F88661 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE3BBFC273E7B8F00F88661 /* Pizzabot.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7FE3BBF7273E7B8F00F88661 /* Pizzabot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE3BBFF273E7B8F00F88661 /* Build configuration list for PBXNativeTarget "Pizzabot" */;
+			buildPhases = (
+				7FE3BBF3273E7B8F00F88661 /* Headers */,
+				7FE3BBF4273E7B8F00F88661 /* Sources */,
+				7FE3BBF5273E7B8F00F88661 /* Frameworks */,
+				7FE3BBF6273E7B8F00F88661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pizzabot;
+			productName = Pizzabot;
+			productReference = 7FE3BBF8273E7B8F00F88661 /* Pizzabot.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7FE3BC06273E7D0000F88661 /* PizzabotChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE3BC0E273E7D0000F88661 /* Build configuration list for PBXNativeTarget "PizzabotChallengeTests" */;
+			buildPhases = (
+				7FE3BC03273E7D0000F88661 /* Sources */,
+				7FE3BC04273E7D0000F88661 /* Frameworks */,
+				7FE3BC05273E7D0000F88661 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FE3BC0D273E7D0000F88661 /* PBXTargetDependency */,
+			);
+			name = PizzabotChallengeTests;
+			productName = PizzabotChallengeTests;
+			productReference = 7FE3BC07273E7D0000F88661 /* PizzabotChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FE3BBEF273E7B8F00F88661 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					7FE3BBF7273E7B8F00F88661 = {
+						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
+					};
+					7FE3BC06273E7D0000F88661 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 7FE3BBF2273E7B8F00F88661 /* Build configuration list for PBXProject "Pizzabot" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FE3BBEE273E7B8F00F88661;
+			productRefGroup = 7FE3BBF9273E7B8F00F88661 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FE3BBF7273E7B8F00F88661 /* Pizzabot */,
+				7FE3BC06273E7D0000F88661 /* PizzabotChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FE3BBF6273E7B8F00F88661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE3BC05273E7D0000F88661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FE3BBF4273E7B8F00F88661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F97FA252743BF500032FB7A /* Map.swift in Sources */,
+				7F97FA2A2743C0190032FB7A /* OutputParser.swift in Sources */,
+				7F7A52CE274238C10002B78F /* PizzaBot.swift in Sources */,
+				7F97FA232743BF390032FB7A /* Bot.swift in Sources */,
+				7F97FA302743C1770032FB7A /* Environment.swift in Sources */,
+				7F97FA2E2743C0710032FB7A /* PizzaEnvironment.swift in Sources */,
+				7F7A52D0274238D90002B78F /* PizzaMap.swift in Sources */,
+				7F7A52D2274238EB0002B78F /* Direction.swift in Sources */,
+				7F97FA282743BF930032FB7A /* InputParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE3BC03273E7D0000F88661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE3BC0A273E7D0000F88661 /* PizzaBotTests.swift in Sources */,
+				7F7A52DF27424F8D0002B78F /* EnvironmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FE3BC0D273E7D0000F88661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FE3BBF7273E7B8F00F88661 /* Pizzabot */;
+			targetProxy = 7FE3BC0C273E7D0000F88661 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7FE3BBFD273E7B8F00F88661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7FE3BBFE273E7B8F00F88661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7FE3BC00273E7B8F00F88661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P3CT26JZC7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abcd.Pizzabot;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7FE3BC01273E7B8F00F88661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P3CT26JZC7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abcd.Pizzabot;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7FE3BC0F273E7D0000F88661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3CT26JZC7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abcd.PizzabotChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7FE3BC10273E7D0000F88661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3CT26JZC7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abcd.PizzabotChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FE3BBF2273E7B8F00F88661 /* Build configuration list for PBXProject "Pizzabot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE3BBFD273E7B8F00F88661 /* Debug */,
+				7FE3BBFE273E7B8F00F88661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE3BBFF273E7B8F00F88661 /* Build configuration list for PBXNativeTarget "Pizzabot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE3BC00273E7B8F00F88661 /* Debug */,
+				7FE3BC01273E7B8F00F88661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE3BC0E273E7D0000F88661 /* Build configuration list for PBXNativeTarget "PizzabotChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE3BC0F273E7D0000F88661 /* Debug */,
+				7FE3BC10273E7D0000F88661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FE3BBEF273E7B8F00F88661 /* Project object */;
+}
