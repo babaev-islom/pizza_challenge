@@ -1,94 +1,122 @@
 # Slice Code Challenge
 
-## Introduction
+## Description
+Pizzabot is a robot that's main task is to deliver a pizza. 
+Challenge assumed the map where the bot navigates to be 2-dimensional and 
+the goal of the project is to create a path for a bot to reach every input paths and deliver pizza. 
+The outcome should be as a string representing movements of a bot on the map.
 
-As part of Slice's commitment to reducing bias in the interview process, we're
-asking you to complete a code challenge. The challenge is intended to be
-respectful of your time, language- and platform-neutral, appropriate for
-engineers of all skill levels, and (hopefully) fun. All challenges are stripped
-of identifying information and judged against a rubric by two independent
-reviewers. You can make the anonymization process easier for us by not
-including your name in source files or documentation.
+## Prerequisites
 
-Slice engineers work predominantly in Ruby, Javascript, Python, Swift, and
-Android Kotlin, but you're welcome to complete the challenge in the programming
-language of your choice. If we believe we're not qualified to evaluate it,
-we'll let you know.
+Project was developed using `Xcode 13.1` and `Swift 5.5`. 
+Please make sure to have the latest Xcode version. 
+You may not be able to open the project if the Xcode version is below 13.1.
+The entire project was developed as a MacOS framework so as to make unit-tests instant with almost no delay. 
+Since the challenge assumed the production project to be somewhat a command line tool, 
+I have decided to create it as a MacOS framework. 
 
-If you successfully complete the challenge and agree to a formal interview,
-we may ask you to pair-program with one of our engineers on an extension to
-your submission as part of that process.
+## Running
 
-Please submit the solution to your challenge as a tarball, with clear
-instructions on how to execute it.
+Since the project was assumed to be a command line application, 
+I have created tests that validate the expected behavior. 
+For running the project, please open `Pizzabot/PizzabotChallengeTests/EnvironmentTests.swift`. 
+The method that asserts the required behavior is `test_startBot_correctlyFollowsMainInputPath`.
+It clearly follows the paths on the grid and computes a final string. 
+For running the entire test suite, press `Cmd + U`.
 
-## Rubric
+## General idea
 
-Here's what we're looking for:
+There are couple of classes that interact with each other:
+* _Direction_. Is an enum representing directions or moves a PizzaBot can execute in the environment.
+Each move has an associated moveValue computed property that defines a coordinate-wise movement in the range [-1,1]. 
+Thus, 1 defines moving upward (north) or right (east) and -1 represents moving down (south) or left (west).
+Value 0 defines a drop. Drop is also considerate as a `movement` in this sense
 
-* _Correctness_. Does the code fulfill the requirements of the challenge?
-* _Readability_. Is the code well-structured by the standards of the host
-  language? Is it simple and clean? Does it reflect the domain of the problem?
-* _Fit and polish_. Is there a README? A build script? Are there spelling
-  errors or extraneous comments? How does it handle unspecified behavior?
-* _Test coverage_. Not every developer writes tests, and that's okay. But we
-  do. (Most of the time.)
+* _Map_. `Map` determines a grid system with bounds.
+Since bot can't move itself freely, Map defines a bounds where a bot can or can't move. 
+This is an abstract interface that can be implemented by any client and we are not constraining our map to be only 2-dimensional. 
+`PizzaMap`, its concrete implementation, has a `mapSize` injected into it for validating moves of a bot on the map.
+`validateMove` instance method would assert whether a bot can move and it completes
+with an optional error (if move is invalid). A bot can move freely if aforementioned method completes with nil error.
 
-## Challenge: Pizzabot (also see PDF)
+* _Bot_. `Bot` is also a protocol that defines public interfaces for clients to access.
+Bot has a single instance method `move` that should indeed call Map's validateMove 
+in each movement since map has its own size. `PizzaBot` is an implementation of this 
+protocol that closely interacts with a `PizzaMap` for validating its moves. 
+`position` property is a public tuple (getter) for asserting or checking the current position of the bot.
+   
+* _Environment_. `Environment` is again an interface that defines the environment 
+where the Bot operates or moves. It has an `initializer that can throw` 
+in case of invalid input (will be explained later) and
+a startBot() method that can also throw in case of invalid moves. 
+`PizzaEnvironment` is an implementation detail of the Environment
+ that closely interacts with a Bot and captures each move made by it. 
+ Therefore, it has `botMoves` public getter for asserting bot's moves for a specified input string.
+ 
+* _Helpers_. `InputParser` is class that defines static methods 
+for validating and parsing the input string specified by the user.
+Since the parser is used simply as a validator,
+we are not required to instantiate it and it mainly acts as a namespace.
+It also defines a custom `ParseError` enum that clearly idenfies 
+each error case during parsing strategy.
+Parser has two static methods, `parseInputMapSize` for parsing the map size and `parseInputPaths` 
+for parsing the paths from the input string. Both of these methods can throw if the provided input is invalid. 
 
-As part of our continuing commitment to the latest cutting-edge pizza
-technology research, Slice is working on a robot that delivers pizza. We call
-it _(dramatic pause)_: Pizzabot. Your task is to instruct Pizzabot on how to
-deliver pizzas to all the houses in a neighborhood.
+## Input String Validation
 
-In more specific terms, given a grid (where each point on the grid is one
-house) and a list of points representing houses in need of pizza delivery,
-return a list of instructions for getting Pizzabot to those locations and
-delivering. An instruction is one of:
-
+First, let's define invalid input strings for the PizzaEnvironment.
 ```
-N: Move north
-S: Move south
-E: Move east
-W: Move west
-D: Drop pizza
+empty string
+x (1, 3) (2, 3)
+5x (1, 3) (2, 3)
+x5 (1, 3) (2, 3)
+5x5 (1 3) (2, 3)
+5x5 1, 3) (2, 3)
+5x5 (1, 3 (2, 3)
+5x5 (1, 3) 2, 3)
+5x5 (1, 3) (2, 3
+5x5 (1, 5) (2, 3)
+and etc
+``` 
+As we can clearly see, the `InputParser` would definitely throw in those cases.
+The only valid strings that can be passed are
 ```
+5x5 (1, 3) (2, 3)
+5x5 (1,3)(2,3)
+``` 
+Therefore, InputParser won't throw any error if the input string matches the above standard.
 
-Pizzabot always starts at the origin point, (0, 0). As with a Cartesian
-plane, this point lies at the most south-westerly point of the grid.
+## Bot Navigation Logic
+Since bot has 5 actions (4 movements and a drop action), we can break down `Direction` enum. 
+The map is a 2-d grid system and the origin is at (0,0)
 
-Therefore, given the following input:
+* `East` - moves east one cell in X position.
+           e.g. moving east from (0,0) results in (1,0). It increments X position by 1.
+* `West` - moves west one cell in X position. 
+           e.g. moving east from (1,0) results in (0,0). It decrements X position by 1. 
+           Moving west in (0,0) results in a failure.
+* `North` - moves north one cell in Y position. 
+            e.g. moving east from (0,0) results in (0,1). It increments Y position by 1.
+* `South` - moves south one cell in Y position. 
+            e.g. moving east from (0,1) results in (0,0). It decrements Y position by 1.
 
-```sh
-$ ./pizzabot "5x5 (1, 3) (4, 4)"
-```
+We should note that the bot can't move out of map bounds and it will result in the error.
+ However, the entire navigation logic eliminates all the errors and this is backed up by tests.
 
-one correct solution would be:
+Let's consider a simple scenario of moving from origin to `(2, 3)`.
+Input string : `5x5 (2, 3)`.
+Bot always moves with regards to X coordinate and then in terms of Y coordinate. 
+Therefore, we would end up with the following sequence of moves: east, east, north, north, north, drop.
+Consequently, the actions performed by a bot are converted into a string -> `EENNND` 
+`Note` - Bot already takes into account map bounds `5x5` 
+by the means of a parser that throws if any of the input paths 
+is equal to or greater than the map size. 
+Thus, it does not move out of map bounds. 
+The resultant string for the input string `5x5 (2, 3)` would `always` be the same.
 
-```
-ENNNDEEEND
-```
-
-In other words: move east once and north thrice; drop a pizza; move east thrice
-and north once; drop a final pizza.
-
-If you'd prefer to avoid stdin, or work predominantly in a platform that makes
-it difficult to use, the equivalent solution expressed as an integration test is
-just fine. The API is entirely up to you, as long as the test exercises
-functionality that accepts and returns properly formatted strings:
-
-```
-assertEqual(pizzabot("5x5 (1, 3) (4, 4)"), "ENNNDEEEND")
-```
-
-There are multiple correct ways to navigate between locations. We do not take
-optimality of route into account when grading: all correct solutions are good
-solutions.
-
-To complete the challenge, please solve for the following _exact input_:
-
-```sh
+## Results
+The main requirement of the challenge was to generate a path string for the input 
+```sh 
 5x5 (0, 0) (1, 3) (4, 4) (4, 2) (4, 2) (0, 1) (3, 2) (2, 3) (4, 1)
-```
-
-Keep it simple, and have fun!
+``` 
+The resultant string that the bot computes is `DENNNDEEENDSSDDWWWWSDEEENDWNDEESSD`. 
