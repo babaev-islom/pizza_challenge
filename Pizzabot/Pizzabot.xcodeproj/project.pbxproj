@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4454FCD92744F2FC002295C7 /* BotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454FCD82744F2FC002295C7 /* BotTests.swift */; };
+		4454FCDC27450B13002295C7 /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454FCDB27450B13002295C7 /* MapTests.swift */; };
 		7F7A52CE274238C10002B78F /* PizzaBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52CD274238C10002B78F /* PizzaBot.swift */; };
 		7F7A52D0274238D90002B78F /* PizzaMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52CF274238D90002B78F /* PizzaMap.swift */; };
 		7F7A52D2274238EB0002B78F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A52D1274238EB0002B78F /* Direction.swift */; };
@@ -14,11 +16,9 @@
 		7F97FA232743BF390032FB7A /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA222743BF390032FB7A /* Bot.swift */; };
 		7F97FA252743BF500032FB7A /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA242743BF500032FB7A /* Map.swift */; };
 		7F97FA282743BF930032FB7A /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA272743BF930032FB7A /* InputParser.swift */; };
-		7F97FA2A2743C0190032FB7A /* OutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA292743C0190032FB7A /* OutputParser.swift */; };
 		7F97FA2E2743C0710032FB7A /* PizzaEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA2D2743C0710032FB7A /* PizzaEnvironment.swift */; };
 		7F97FA302743C1770032FB7A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F97FA2F2743C1770032FB7A /* Environment.swift */; };
 		7FE3BBFC273E7B8F00F88661 /* Pizzabot.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FE3BBFB273E7B8F00F88661 /* Pizzabot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FE3BC0A273E7D0000F88661 /* PizzaBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3BC09273E7D0000F88661 /* PizzaBotTests.swift */; };
 		7FE3BC0B273E7D0000F88661 /* Pizzabot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE3BBF8273E7B8F00F88661 /* Pizzabot.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4454FCD82744F2FC002295C7 /* BotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotTests.swift; sourceTree = "<group>"; };
+		4454FCDB27450B13002295C7 /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
 		7F7A52CD274238C10002B78F /* PizzaBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaBot.swift; sourceTree = "<group>"; };
 		7F7A52CF274238D90002B78F /* PizzaMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaMap.swift; sourceTree = "<group>"; };
 		7F7A52D1274238EB0002B78F /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -40,13 +42,11 @@
 		7F97FA222743BF390032FB7A /* Bot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bot.swift; sourceTree = "<group>"; };
 		7F97FA242743BF500032FB7A /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		7F97FA272743BF930032FB7A /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
-		7F97FA292743C0190032FB7A /* OutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputParser.swift; sourceTree = "<group>"; };
 		7F97FA2D2743C0710032FB7A /* PizzaEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaEnvironment.swift; sourceTree = "<group>"; };
 		7F97FA2F2743C1770032FB7A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		7FE3BBF8273E7B8F00F88661 /* Pizzabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pizzabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE3BBFB273E7B8F00F88661 /* Pizzabot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pizzabot.h; sourceTree = "<group>"; };
 		7FE3BC07273E7D0000F88661 /* PizzabotChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzabotChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FE3BC09273E7D0000F88661 /* PizzaBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaBotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +68,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4454FCDA27450B0E002295C7 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4454FCDB27450B13002295C7 /* MapTests.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		7F7A52CC274238550002B78F /* Bot */ = {
 			isa = PBXGroup;
 			children = (
-				7FE3BC09273E7D0000F88661 /* PizzaBotTests.swift */,
+				4454FCD82744F2FC002295C7 /* BotTests.swift */,
 			);
 			path = Bot;
 			sourceTree = "<group>";
@@ -99,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				7F97FA272743BF930032FB7A /* InputParser.swift */,
-				7F97FA292743C0190032FB7A /* OutputParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -146,8 +153,9 @@
 		7FE3BC08273E7D0000F88661 /* PizzabotChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				7F7A52DD27424F7B0002B78F /* Environment */,
+				4454FCDA27450B0E002295C7 /* Map */,
 				7F7A52CC274238550002B78F /* Bot */,
+				7F7A52DD27424F7B0002B78F /* Environment */,
 			);
 			path = PizzabotChallengeTests;
 			sourceTree = "<group>";
@@ -263,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F97FA252743BF500032FB7A /* Map.swift in Sources */,
-				7F97FA2A2743C0190032FB7A /* OutputParser.swift in Sources */,
 				7F7A52CE274238C10002B78F /* PizzaBot.swift in Sources */,
 				7F97FA232743BF390032FB7A /* Bot.swift in Sources */,
 				7F97FA302743C1770032FB7A /* Environment.swift in Sources */,
@@ -278,8 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE3BC0A273E7D0000F88661 /* PizzaBotTests.swift in Sources */,
+				4454FCD92744F2FC002295C7 /* BotTests.swift in Sources */,
 				7F7A52DF27424F8D0002B78F /* EnvironmentTests.swift in Sources */,
+				4454FCDC27450B13002295C7 /* MapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +431,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P3CT26JZC7;
+				DEVELOPMENT_TEAM = LCF23C4C8B;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -453,7 +461,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P3CT26JZC7;
+				DEVELOPMENT_TEAM = LCF23C4C8B;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -481,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3CT26JZC7;
+				DEVELOPMENT_TEAM = LCF23C4C8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,7 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3CT26JZC7;
+				DEVELOPMENT_TEAM = LCF23C4C8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

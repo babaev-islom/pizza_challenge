@@ -7,7 +7,7 @@
 
 
 public protocol Bot {
-    var position : (Int, Int) { get }
-    typealias MoveResult = Result<Direction, Error>
-    func move(to direction: Direction, completion: @escaping (MoveResult) -> Void)
+    var currentXPosition : Int {get}
+    var currentYPosition : Int {get}
+    @discardableResult mutating func move(to direction: Direction) -> Bool
 }

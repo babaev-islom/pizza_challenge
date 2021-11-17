@@ -5,38 +5,30 @@
 //  Created by Islom Babaev on 15/11/21.
 //
 
-public final class PizzaBot : Bot {
-    private var currentXPosition: Int = 0
-    private var currentYPosition: Int = 0
+public struct PizzaBot : Bot {
+    public var currentXPosition : Int = 0
+    public var currentYPosition : Int = 0
     
-    public var position : (Int, Int) {
-        return (currentXPosition, currentYPosition)
-    }
+    private var map: Map
     
-    private let map: Map
-    
-    public init(map : Map) {
+    public init(map: Map) {
         self.map = map
     }
     
-    public func move(to direction: Direction, completion: @escaping (MoveResult) -> Void) {
-        map.validateMove(direction: direction, from: (x: currentXPosition, y: currentYPosition)) { [weak self] error in
-            guard let self = self else { return }
-            
-            if let error = error {
-                return completion(.failure(error))
-            }
-            
-            switch direction {
-            case .east, .west:
-                self.currentXPosition += direction.moveValue
-            case .south, .north:
-                self.currentYPosition += direction.moveValue
-            case .drop:
-                break
-            }
-            
-            completion(.success(direction))
+    @discardableResult
+    mutating public func move(to direction: Direction) -> Bool {
+        guard map.validateMove(direction: direction, from: (currentXPosition, currentYPosition)) else { return false }
+        
+        switch direction {
+        case .east, .west:
+            currentXPosition += direction.moveValue
+        case .north, .south:
+            currentYPosition += direction.moveValue
+        case .drop:
+            break
         }
+        
+        return true
     }
 }
+  

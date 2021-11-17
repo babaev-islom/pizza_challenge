@@ -5,19 +5,14 @@
 //  Created by Islom Babaev on 16/11/21.
 //
 
-
 public final class PizzaEnvironment : Environment {
+    
     public let mapSize : Int
-    public let inputPaths : [(Int, Int)]
+    public let inputPaths : [(Int,Int)]
     
-    private let bot : PizzaBot
+    public var botMoves : [Direction] = []
     
-    public var botMoves = [Direction]()
-    
-    private var botXPos : Int = 0
-    private var botYPos : Int = 0
-    
-    public var numberOfIterations: Int = 0
+    private var bot: Bot
     
     public init(input: String) throws {
         self.mapSize = try InputParser.parseInputMapSize(input: input)
@@ -27,10 +22,9 @@ public final class PizzaEnvironment : Environment {
     
     public func startBot() throws {
         try inputPaths.forEach { (xPos, yPos) in
-            numberOfIterations += 1
             
-            let currentBotXPosition = botXPos
-            let currentBotYPosition = botYPos
+            let currentBotXPosition = bot.currentXPosition
+            let currentBotYPosition = bot.currentYPosition
             
             //if current X position value is less than the value that is in the path
             //we would move east and west otherwise
@@ -49,54 +43,20 @@ public final class PizzaEnvironment : Environment {
             }
             
             //if the bot is on the same cell as the required target position
-            if botXPos == xPos && botYPos == yPos {
-                var capturedError : Error?
-                bot.move(to: .drop) { [unowned self] result in
-                    switch result {
-                    case let .success(direction):
-                        self.botMoves.append(direction)
-                    case let .failure(receivedError):
-                        capturedError = receivedError
-                    }
+            if bot.currentXPosition == xPos && bot.currentYPosition == yPos {
+                guard bot.move(to: .drop) else { throw NSError(domain: "out of bounds", code: -1)
                 }
-                
-                if let error = capturedError {
-                    throw error
-                }
+                botMoves.append(.drop)
             }
         }
     }
     
-    //helper method to move the bot in the app with respect to the direction and interval passed as arguments
     private func moveToDirection(_ direction : Direction, from fromPosition : Int, to toPosition: Int) throws {
         for _ in fromPosition..<toPosition {
-            
-            var capturedError : Error?
-           
-            bot.move(to: direction) { [unowned self] result in
-                switch result {
-                case let .success(direction):
-                    self.botMoves.append(direction)
-                    switch direction {
-                    case .east:
-                        self.botXPos += 1
-                    case .west:
-                        self.botXPos += -1
-                    case .north:
-                        self.botYPos += 1
-                    case .south:
-                        self.botYPos += -1
-                    case .drop:
-                        break
-                    }
-                case let .failure(receivedError):
-                    capturedError = receivedError
-                }
+            let moveSuccess = bot.move(to: direction)
+            guard moveSuccess else { throw NSError(domain: "out of bounds", code: -1)
             }
-            
-            if let error = capturedError {
-                throw error
-            }
+            botMoves.append(direction)
         }
     }
 }

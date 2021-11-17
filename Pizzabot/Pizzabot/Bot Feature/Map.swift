@@ -6,5 +6,5 @@
 //
 
 public protocol Map {
-    func validateMove(direction: Direction, from position: (x: Int, y: Int), completion: @escaping (Error?) -> Void)
+    func validateMove(direction: Direction, from position: (x: Int, y: Int)) -> Bool
 }

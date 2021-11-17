@@ -5,28 +5,28 @@
 //  Created by Islom Babaev on 15/11/21.
 //
 
-public final class PizzaMap : Map {
+public struct PizzaMap : Map {
+    
     private let mapSize : Int
     
     public init(mapSize: Int) {
         self.mapSize = mapSize
     }
     
-    public func validateMove(direction: Direction, from position: (x: Int, y: Int), completion: @escaping (Error?) -> Void) {
+    public func validateMove(direction: Direction, from position: (x: Int, y: Int)) -> Bool {
         let (xPos, yPos) = position
-        let outOfBoundsError = NSError(domain: "Failed with out of bounds", code: -1)
         
         switch direction {
         case .east:
-            xPos < mapSize ? completion(nil) : completion(outOfBoundsError)
-        case .south:
-            yPos > 0 ? completion(nil) : completion(outOfBoundsError)
+            return xPos < mapSize
         case .west:
-            xPos > 0 ? completion(nil) : completion(outOfBoundsError)
+            return xPos > 0
+        case .south:
+            return yPos > 0
         case .north:
-            yPos < mapSize ? completion(nil) : completion(outOfBoundsError)
+            return yPos < mapSize
         case .drop:
-            completion(nil)
+            return true
         }
     }
 }

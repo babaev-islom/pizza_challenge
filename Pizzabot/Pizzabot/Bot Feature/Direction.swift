@@ -14,7 +14,7 @@ public enum Direction {
     
     ///Enums must have unique rawValue for each case
     ///Thus, moveValue defines a value in the range [-1,1] to move the bot on the grid
-    var moveValue : Int {
+    public var moveValue : Int {
         switch self {
         case .east, .north:
             return 1
@@ -23,5 +23,26 @@ public enum Direction {
         case .drop:
             return 0
         }
+    }
+}
+
+public extension Direction {
+    static func convertDirectionsIntoPathString(_ directions: [Direction]) -> String {
+        var path = ""
+        directions.forEach { direction in
+            switch direction {
+            case .east:
+                path += "E"
+            case .west:
+                path += "W"
+            case .north:
+                path += "N"
+            case .south:
+                path += "S"
+            case .drop:
+                path += "D"
+            }
+        }
+        return path
     }
 }
